@@ -8,11 +8,11 @@ import {CategoriaProdutoService} from "./categoria-produto.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  vendasPorPeriodo: Array<any> = [];
+  vendasPorPeriodo: Array<any>;
 
-  vendasPorCategoria: Array<any> = [];
+  vendasPorCategoria: Array<any>;
 
-  vendasPorProduto: Array<any> = [];
+  vendasPorProduto: Array<any>;
 
   ngOnInit() {
     this.loadReports();
@@ -23,14 +23,16 @@ export class AppComponent implements OnInit {
   }
 
   constructor(private reportsService: ReportsService, private categoriaProdutoService: CategoriaProdutoService) {
-
+    
   }
 
   loadReports() {
-    this.reportsService.loadReports();
+    this.reportsService.getReports().subscribe((data: any) => {
+      let report: any = { ...data };
 
-    this.vendasPorPeriodo = this.reportsService.reports.vendasPorPeriodo;
-    this.vendasPorCategoria = this.reportsService.reports.vendasPorCategoria;
-    this.vendasPorProduto = this.reportsService.reports.vendasPorProduto;
+      this.vendasPorPeriodo = report.vendasPorPeriodo;
+      this.vendasPorCategoria = report.vendasPorCategoria;
+      this.vendasPorProduto = report.vendasPorProduto;
+    });
   }
 }

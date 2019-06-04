@@ -26,8 +26,8 @@
     </tr>
 
     <tr *ngFor="let vendaCategoria of vendasPorCategoria">
-      <td>vendaCategoria.categoria</td>
-      <td>vendaCategoria.valorVendido</td>
+      <td>{{vendaCategoria.categoria}}</td>
+      <td>{{vendaCategoria.valorVendido}}</td>
     </tr>
   </tbody>
 </table>
@@ -41,8 +41,8 @@
     </tr>
 
     <tr *ngFor="let vendaProduto of vendasPorProduto">
-      <td>vendaProduto.codigoProduto</td>
-      <td>vendaProduto.quantidade</td>
+      <td>{{vendaProduto.codigoProduto}}</td>
+      <td>{{vendaProduto.quantidade}}</td>
     </tr>
   </tbody>
 </table>

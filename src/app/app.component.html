@@ -1,48 +1,50 @@
-<h1>Farmácia do Elvis</h1>
-<h2>Relatórios</h2>
-<table>
-  <thead>Vendas por Período</thead>
-  <tbody>
-    <tr>
-      <th>Ano</th>
-      <th>Mês</th>
-      <th>Valor Vendido (R$)</th>
-    </tr>
+<div class="container">
+  <h1>Relatórios</h1>
 
-    <tr *ngFor="let vendaPeriodo of vendasPorPeriodo">
-      <td>{{vendaPeriodo.ano}}</td>
-      <td>{{vendaPeriodo.mes}}</td>
-      <td>{{vendaPeriodo.valorVendido}}</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped table-bordered">
+    <thead>Vendas por Período</thead>
+    <tbody>
+      <tr>
+        <th>Ano</th>
+        <th>Mês</th>
+        <th>Valor Vendido (R$)</th>
+      </tr>
 
-<table>
-  <thead>Vendas por Categoria</thead>
-  <tbody>
-    <tr>
-      <th>Categoria</th>
-      <th>Valor Vendido (R$)</th>
-    </tr>
+      <tr *ngFor="let vendaPeriodo of vendasPorPeriodo">
+        <td>{{vendaPeriodo.ano}}</td>
+        <td>{{vendaPeriodo.mes}}</td>
+        <td>{{vendaPeriodo.valorVendido}}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <tr *ngFor="let vendaCategoria of vendasPorCategoria">
-      <td>{{vendaCategoria.categoria}}</td>
-      <td>{{vendaCategoria.valorVendido}}</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped table-bordered">
+    <thead>Vendas por Categoria</thead>
+    <tbody>
+      <tr>
+        <th>Categoria</th>
+        <th>Valor Vendido (R$)</th>
+      </tr>
 
-<table>
-  <thead>Vendas por Produto</thead>
-  <tbody>
-    <tr>
-      <th>Código do Produto</th>
-      <th>Quantidade</th>
-    </tr>
+      <tr *ngFor="let vendaCategoria of vendasPorCategoria">
+        <td>{{vendaCategoria.categoria}}</td>
+        <td>{{vendaCategoria.valorVendido}}</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <tr *ngFor="let vendaProduto of vendasPorProduto">
-      <td>{{vendaProduto.codigoProduto}}</td>
-      <td>{{vendaProduto.quantidade}}</td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-striped table-bordered">
+    <thead>Vendas por Produto</thead>
+    <tbody>
+      <tr>
+        <th>Código do Produto</th>
+        <th>Quantidade</th>
+      </tr>
+
+      <tr *ngFor="let vendaProduto of vendasPorProduto">
+        <td>{{vendaProduto.codigoProduto}}</td>
+        <td>{{vendaProduto.quantidade}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

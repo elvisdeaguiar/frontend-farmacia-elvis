@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ReportsService} from "./reports.service";
+import {CategoriaProdutoService} from "./categoria-produto.service";
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,11 @@ export class AppComponent implements OnInit {
     this.loadReports();
   }
 
-  constructor(private reportsService: ReportsService) {
+  abreviacaoCategoriaParaExtenso(abreviacao: string): string {
+    return this.categoriaProdutoService.abreviacaoCategoriaParaExtenso(abreviacao);
+  }
+
+  constructor(private reportsService: ReportsService, private categoriaProdutoService: CategoriaProdutoService) {
 
   }
 

@@ -27,7 +27,7 @@
       </tr>
 
       <tr *ngFor="let vendaCategoria of vendasPorCategoria">
-        <td>{{vendaCategoria.categoria}}</td>
+        <td>{{abreviacaoCategoriaParaExtenso(vendaCategoria.categoria)}}</td>
         <td>{{vendaCategoria.valorVendido}}</td>
       </tr>
     </tbody>

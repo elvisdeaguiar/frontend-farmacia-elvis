@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {ReportsService} from "./reports.service";
 
 @Component({
   selector: 'app-root',
@@ -16,43 +17,15 @@ export class AppComponent implements OnInit {
     this.loadReports();
   }
 
+  constructor(private reportsService: ReportsService) {
+
+  }
+
   loadReports() {
-    this.vendasPorPeriodo = [
-        {
-          'ano': 2019,
-          'mes': 6,
-          'valorVendido': 185.88
-        }
-    ];
+    this.reportsService.loadReports();
 
-    this.vendasPorCategoria = [
-      {
-        'categoria': 'M',
-        'valorVendido': 20.22
-      },
-      {
-        'categoria': 'NM',
-        'valorVendido': 82.80
-      },
-      {
-        'categoria': 'NMA',
-        'valorVendido': 82.86
-      }
-    ];
-
-    this.vendasPorProduto = [
-      {
-        'codigoProduto': 2,
-        'quantidade': 4
-      },
-      {
-        'codigoProduto': 1,
-        'quantidade': 2
-      },
-      {
-        'codigoProduto': 3,
-        'quantidade': 1
-      }
-    ];
+    this.vendasPorPeriodo = this.reportsService.reports.vendasPorPeriodo;
+    this.vendasPorCategoria = this.reportsService.reports.vendasPorCategoria;
+    this.vendasPorProduto = this.reportsService.reports.vendasPorProduto;
   }
 }

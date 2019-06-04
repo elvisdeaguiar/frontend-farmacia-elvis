@@ -4,6 +4,7 @@ import {LOCALE_ID, NgModule} from '@angular/core';
 import { AppComponent } from './app.component';
 import {registerLocaleData} from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { HttpClientModule } from "@angular/common/http";
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -12,7 +13,8 @@ registerLocaleData(localePt, 'pt-BR');
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }
